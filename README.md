@@ -1,50 +1,131 @@
-# Welcome to your Expo app 👋
+# 🏋️‍♀️ Three‑Screen Workout Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple yet powerful mobile fitness tracking app built with **React Native (Expo)**. Designed as a mini-challenge for internship applications, this app helps users stay on track with their workouts while showcasing modern mobile development skills.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Features
 
-   ```bash
-   npm install
-   ```
+✅ **Authentication**
+- Secure login with email & password using Expo SecureStore
+- Optionally supports Firebase Authentication
 
-2. Start the app
+✅ **Home Screen**
+- Displays a list of 3 hard-coded workout routines
 
-   ```bash
-   npx expo start
-   ```
+✅ **Detail Screen**
+- Shows a list of exercises for each workout
+- “Start” button begins a simple timer
+- Auto-advances between exercises
+- Voice prompts via Text-to-Speech (TTS)
 
-In the output, you'll find options to open the app in a
+✅ **History Screen**
+- Logs completed workouts
+- Weekly calendar or list view
+- Local persistence using SQLite
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+✅ **Nice-to-Have**
+- Dark mode ready (can be extended)
+- Export to Google Fit / Apple Health (future scope)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🧰 Tech Stack
 
-When you're ready, run:
+- **React Native** (with Expo)
+- **React Navigation** (stack navigation)
+- **SQLite** (via `expo-sqlite`)
+- **SecureStore** for on-device credential storage
+- **Expo Speech** for voice cues
+- **Firebase (optional)** for auth
+- **LocalStorage / SQLite** for workout history
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/<your-username>/workout-tracker.git
+cd workout-tracker
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install dependencies
 
-## Learn more
+Make sure you have `Node.js` and `npm` installed.
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+npx expo install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 3. Start the app
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+Scan the QR code with your phone using the **Expo Go** app.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🔐 Secure Authentication
+
+The app uses **Expo SecureStore** to safely store credentials locally.
+
+You can optionally connect Firebase for production-ready auth:
+- Set up Firebase project
+- Replace config in `firebase.js`
+
+---
+
+## 🗃️ Local Storage (SQLite)
+
+Workout history is saved locally using Expo SQLite:
+- Creates a local table
+- Saves timestamp of completed workouts
+- Used to render a calendar or list of past sessions
+
+---
+
+## 📦 Project Structure
+
+```
+workout-tracker/
+├── App.js
+├── firebase.js
+├── screens/
+│   ├── AuthScreen.js
+│   ├── HomeScreen.js
+│   ├── DetailScreen.js
+│   └── HistoryScreen.js
+├── utils/
+│   ├── secureStore.js
+│   └── db.js
+└── assets/
+```
+
+---
+
+## 💡 Future Enhancements
+
+- Dark mode theme switch
+- Google Fit / Apple Health integration
+- Editable workouts
+- Cloud sync with Firebase Firestore
+
+---
+
+## 🙋‍♀️ Author
+
+**Anjali Kaushik**  
+🔗 [LinkedIn](https://www.linkedin.com/in/kaushikanjali//)  
+📧 Email: kaushikanjali1124@gmail.com
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - feel free to use and modify!
+
